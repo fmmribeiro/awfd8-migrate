@@ -30,6 +30,7 @@ dependencies:
     - field.field.node.safari.field_tags_region
     - node.type.safari
   module:
+    - datetime
     - entity_reference_revisions
     - field_group
     - image
@@ -93,7 +94,7 @@ third_party_settings:
         - field_solutions
         - field_challenges
       parent_name: ''
-      weight: 20
+      weight: 7
       format_type: html_element
       format_settings:
         id: ''
@@ -132,6 +133,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_date:
+    type: datetime_default
+    weight: 9
+    region: content
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
   field_image:
     weight: 4
     label: hidden
@@ -166,7 +176,7 @@ content:
     type: text_default
     region: content
   field_primary_tag:
-    weight: 113
+    weight: 8
     label: above
     settings:
       link: true
@@ -183,7 +193,7 @@ content:
     region: content
   field_schedule_paragraph:
     type: entity_reference_revisions_entity_view
-    weight: 8
+    weight: 6
     label: hidden
     settings:
       view_mode: default
@@ -191,7 +201,7 @@ content:
     third_party_settings: {  }
     region: content
   field_sidebar_item_paragraph:
-    weight: 7
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -213,7 +223,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_bushtracks_safari: true
-  field_date: true
   field_land_habitat: true
   field_legacy_alias: true
   field_legacy_id: true
