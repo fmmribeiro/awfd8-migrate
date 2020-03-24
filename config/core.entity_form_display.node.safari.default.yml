@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.browse_files
     - field.field.node.safari.body
     - field.field.node.safari.field_bushtracks_safari
     - field.field.node.safari.field_challenges
@@ -34,6 +35,7 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - entity_browser
     - field_group
     - image
     - metatag
@@ -241,10 +243,16 @@ content:
   field_main_image:
     weight: 2
     settings:
-      progress_indicator: throbber
+      entity_browser: browse_files
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: thumbnail
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
+    type: entity_browser_file
     region: content
   field_meta_tags:
     weight: 102

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.browse_files
     - field.field.node.resource.body
     - field.field.node.resource.field_article_legacy_alias
     - field.field.node.resource.field_author
@@ -19,13 +20,12 @@ dependencies:
     - field.field.node.resource.field_tags_economic
     - field.field.node.resource.field_tags_projects
     - field.field.node.resource.field_tags_region
-    - image.style.thumbnail
     - node.type.resource
   module:
     - content_moderation
+    - entity_browser
     - field_group
     - file
-    - image
     - link
     - metatag
     - path
@@ -152,10 +152,16 @@ content:
   field_image:
     weight: 2
     settings:
-      progress_indicator: throbber
+      entity_browser: browse_files
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: thumbnail
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
+    type: entity_browser_file
     region: content
   field_land_habitat:
     weight: 31
